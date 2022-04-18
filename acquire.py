@@ -119,7 +119,7 @@ def get_store_item_demand_data():
     
     sales = sales.rename(columns={'item': 'item_id', 'store': 'store_id'})
     df = pd.merge(sales, items, how='left', on='item_id')
-    df = pd.merge(df, items, how='left', on='item_id')
+    df = pd.merge(df, stores, how='left', on='store_id')
     return df
 
 
